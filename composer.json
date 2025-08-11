@@ -1,23 +1,29 @@
 {
-    "name": "flarum/subscriptions",
-    "description": "Allow users to follow discussions and receive notifications for new posts.",
+    "name": "zhihe/subscriptions",
+    "description": "Extended subscriptions with follow_op support - Fork of flarum/subscriptions.",
     "type": "flarum-extension",
     "keywords": [
         "discussion"
     ],
     "license": "MIT",
     "support": {
-        "issues": "https://github.com/flarum/framework/issues",
-        "source": "https://github.com/flarum/subscriptions",
+        "issues": "https://github.com/zhihe/subscriptions/issues",
+        "source": "https://github.com/zhihe/subscriptions",
         "forum": "https://discuss.flarum.org"
     },
-    "homepage": "https://flarum.org",
+    "homepage": "https://github.com/zhihe/subscriptions",
     "funding": [
         {
             "type": "website",
             "url": "https://flarum.org/donate/"
         }
     ],
+    "replace": {
+        "flarum/subscriptions": "*"
+    },
+    "conflict": {
+        "flarum/subscriptions": "*"
+    },
     "require": {
         "flarum/core": "^1.8"
     },
@@ -27,9 +33,6 @@
         }
     },
     "extra": {
-        "branch-alias": {
-            "dev-main": "1.x-dev"
-        },
         "flarum-extension": {
             "title": "Subscriptions",
             "category": "feature",

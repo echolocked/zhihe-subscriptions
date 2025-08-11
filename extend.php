@@ -53,6 +53,20 @@ return [
             if ($state = $discussion->state) {
                 return $state->subscription;
             }
+        })
+        // ZHIHE MODIFICATION: Add subscription count (follow + follow_op)
+        ->attribute('subscriptionCount', function (DiscussionSerializer $serializer, Discussion $discussion) {
+            return $discussion->readers()
+                ->whereIn('subscription', ['follow', 'follow_op'])
+                ->count();
+        }),
+
+    (new Extend\ApiSerializer(BasicDiscussionSerializer::class))
+        // ZHIHE MODIFICATION: Add subscription count to discussion list
+        ->attribute('subscriptionCount', function (BasicDiscussionSerializer $serializer, Discussion $discussion) {
+            return $discussion->readers()
+                ->whereIn('subscription', ['follow', 'follow_op'])
+                ->count();
         }),
 
     (new Extend\User())

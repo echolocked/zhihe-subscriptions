@@ -8,6 +8,7 @@ import addSubscriptionBadge from './addSubscriptionBadge';
 import addSubscriptionControls from './addSubscriptionControls';
 import addSubscriptionFilter from './addSubscriptionFilter';
 import addSubscriptionSettings from './addSubscriptionSettings';
+import addSubscriptionCount from './addSubscriptionCount';
 
 import NewPostNotification from './components/NewPostNotification';
 
@@ -20,6 +21,7 @@ app.initializers.add('subscriptions', function () {
   addSubscriptionControls();
   addSubscriptionFilter();
   addSubscriptionSettings();
+  addSubscriptionCount();
 
   extend(NotificationGrid.prototype, 'notificationTypes', function (items) {
     items.add('newPost', {

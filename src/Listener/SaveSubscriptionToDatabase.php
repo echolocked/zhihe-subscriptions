@@ -26,7 +26,8 @@ class SaveSubscriptionToDatabase
 
             $state = $discussion->stateFor($actor);
 
-            if (! in_array($subscription, ['follow', 'ignore'])) {
+            // ZHIHE MODIFICATION: Added follow_op to valid subscription types
+            if (! in_array($subscription, ['follow', 'ignore', 'follow_op'])) {
                 $subscription = null;
             }
 

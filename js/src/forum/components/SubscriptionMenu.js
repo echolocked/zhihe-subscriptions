@@ -25,6 +25,13 @@ export default class SubscriptionMenu extends Dropdown {
         label: app.translator.trans('flarum-subscriptions.forum.sub_controls.following_button'),
         description: app.translator.trans('flarum-subscriptions.forum.sub_controls.following_text'),
       },
+      // ZHIHE MODIFICATION: Added follow_op subscription option
+      {
+        subscription: 'follow_op',
+        icon: 'fas fa-user-star',
+        label: app.translator.trans('flarum-subscriptions.forum.sub_controls.following_op_button'),
+        description: app.translator.trans('flarum-subscriptions.forum.sub_controls.following_op_text'),
+      },
       {
         subscription: 'ignore',
         icon: 'far fa-eye-slash',
@@ -46,6 +53,12 @@ export default class SubscriptionMenu extends Dropdown {
       case 'follow':
         buttonLabel = app.translator.trans('flarum-subscriptions.forum.sub_controls.following_button');
         buttonIcon = 'fas fa-star';
+        break;
+
+      // ZHIHE MODIFICATION: Handle follow_op button state
+      case 'follow_op':
+        buttonLabel = app.translator.trans('flarum-subscriptions.forum.sub_controls.following_op_button');
+        buttonIcon = 'fas fa-user-star';
         break;
 
       case 'ignore':
@@ -72,7 +85,7 @@ export default class SubscriptionMenu extends Dropdown {
       <Button
         className={classList('Button', 'SubscriptionMenu-button', buttonClass)}
         icon={buttonIcon}
-        onclick={this.saveSubscription.bind(this, discussion, ['follow', 'ignore'].indexOf(subscription) !== -1 ? null : 'follow')}
+        onclick={this.saveSubscription.bind(this, discussion, ['follow', 'ignore', 'follow_op'].indexOf(subscription) !== -1 ? null : 'follow')}
       >
         {buttonLabel}
       </Button>

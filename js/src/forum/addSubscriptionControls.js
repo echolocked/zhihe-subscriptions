@@ -13,6 +13,8 @@ export default function addSubscriptionControls() {
         none: { label: app.translator.trans('flarum-subscriptions.forum.discussion_controls.follow_button'), icon: 'fas fa-star', save: 'follow' },
         follow: { label: app.translator.trans('flarum-subscriptions.forum.discussion_controls.unfollow_button'), icon: 'far fa-star', save: null },
         ignore: { label: app.translator.trans('flarum-subscriptions.forum.discussion_controls.unignore_button'), icon: 'fas fa-eye', save: null },
+        // ZHIHE MODIFICATION: Added follow_op subscription type
+        follow_op: { label: app.translator.trans('flarum-subscriptions.forum.discussion_controls.unfollow_button'), icon: 'fas fa-user-star', save: null },
       };
 
       const subscription = discussion.subscription() || 'none';
