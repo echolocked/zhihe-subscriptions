@@ -21,9 +21,6 @@
     "replace": {
         "flarum/subscriptions": "*"
     },
-    "conflict": {
-        "flarum/subscriptions": "*"
-    },
     "require": {
         "flarum/core": "^1.8"
     },
