@@ -8,29 +8,36 @@
   --badge-bg: var(--following-bg);
   --badge-color: var(--following-color);
 }
+
 .Badge--ignoring {
   --badge-bg: var(--ignoring-bg);
 }
+
 .SubscriptionMenu-button--follow {
-  & when (@config-dark-mode = false) {
+  & when (@config-dark-mode =false) {
     .Button--color(#de8e00, #fff2ae);
   }
-  & when (@config-dark-mode = true) {
+
+  & when (@config-dark-mode =true) {
     .Button--color(#784d00, #fbb94c);
   }
 }
+
 // ZHIHE MODIFICATION: Add styling for follow_op similar to follow
 .SubscriptionMenu-button--follow_op {
-  & when (@config-dark-mode = false) {
+  & when (@config-dark-mode =false) {
     .Button--color(#de8e00, #fff2ae);
   }
-  & when (@config-dark-mode = true) {
+
+  & when (@config-dark-mode =true) {
     .Button--color(#784d00, #fbb94c);
   }
 }
+
 .SubscriptionMenu .Dropdown-menu {
   min-width: 260px;
 }
+
 .SubscriptionMenuItem-label {
   padding-left: 25px;
   display: block;
@@ -40,6 +47,7 @@
     display: block;
   }
 }
+
 .SubscriptionMenuItem-description {
   display: block;
   color: @muted-color;
@@ -54,17 +62,17 @@
   margin-right: -120px; // Position to the left of view count (-65px + -55px)
   width: 50px;
   color: @muted-color;
-  
+
   .fas {
     margin-right: 5px;
   }
-  
+
   &:hover {
     color: @primary-color;
   }
 }
 
-@media @phone {
+@media (max-width: 767px) {
   .item-subscription-count {
     display: none !important;
   }
