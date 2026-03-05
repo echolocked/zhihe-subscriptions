@@ -79,7 +79,8 @@ return [
         ->listen(Hidden::class, Listener\DeleteNotificationWhenPostIsHiddenOrDeleted::class)
         ->listen(Restored::class, Listener\RestoreNotificationWhenPostIsRestored::class)
         ->listen(Deleted::class, Listener\DeleteNotificationWhenPostIsHiddenOrDeleted::class)
-        ->listen(Posted::class, Listener\FollowAfterReply::class),
+        ->listen(Posted::class, Listener\FollowAfterReply::class)
+        ->listen(Posted::class, Listener\FollowAfterStart::class),
 
     (new Extend\Filter(DiscussionFilterer::class))
         ->addFilter(SubscriptionFilterGambit::class)
